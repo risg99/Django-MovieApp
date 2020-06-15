@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+    {% block content %}
+    <h1>Movies List</h1>
+    <div class="movies">
+    {% for movie in movies %}
+        <div class="movie">
+             <h2><a href="{% url 'movies:detail' slug=movie.slug %}">{{ movie.title }}</a></h2>
+            <p>{{ movie.snippet }}</p>
+            <p>{{ movie.date }}</p>
+            <!-- <p class='author'>added by {{ article.author.username}}</p> -->
+        </div>
+    {% endfor %}
+    </div>
+    {% endblock %}
